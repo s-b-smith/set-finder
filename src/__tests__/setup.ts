@@ -20,7 +20,10 @@ export default function setup<T>(
 ): VueWrapper<ComponentInstance<T>> {
   const global: GlobalMountOptions = {
     ...mountOptions?.global,
-    plugins: [[PrimeVue, { license: import.meta.env.VITE_PRIMEVUE_LICENSE_KEY }]],
+    plugins: [
+      ...(mountOptions?.global?.plugins ?? []),
+      [PrimeVue, { license: import.meta.env.VITE_PRIMEVUE_LICENSE_KEY }],
+    ],
     components: {
       ...mountOptions?.global?.components,
       Button,
