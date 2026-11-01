@@ -7,6 +7,7 @@ import {
   type MountingOptions,
 } from '@vue/test-utils';
 import { Button } from 'primevue';
+import PrimeVue from 'primevue/config';
 import type { ComponentInstance } from 'vue';
 
 type GlobalMountOptions = MountingOptions<object>['global'];
@@ -19,6 +20,7 @@ export default function setup<T>(
 ): VueWrapper<ComponentInstance<T>> {
   const global: GlobalMountOptions = {
     ...mountOptions?.global,
+    plugins: [[PrimeVue, { license: import.meta.env.VITE_PRIMEVUE_LICENSE_KEY }]],
     components: {
       ...mountOptions?.global?.components,
       Button,
