@@ -9,7 +9,7 @@ app.use(PrimeVue, {
   theme: {
     preset: Aura,
   },
-  // TODO: Figure out PrimeVue license
+  license: import.meta.env.VITE_PRIMEVUE_LICENSE_KEY,
 });
 
 app.mount('#app');
