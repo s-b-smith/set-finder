@@ -1,4 +1,3 @@
-// import { mount } from '@vue/test-utils'
 import { add } from '../example';
 
 describe('example', () => {
